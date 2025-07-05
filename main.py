@@ -18,9 +18,15 @@ class Fatura(BaseModel):
     miktar: int
     birim_fiyat: float
 
+class SatinAlma(BaseModel):
+    musteri_adi: str
+    urun_kodu: str
+    miktar: int
+
 # ----- SAHTE VERİTABANI -----
 
 urun_listesi = []
+satin_alma_listesi = []
 
 # ----- ENDPOINTLER -----
 
@@ -73,3 +79,31 @@ def fatura_olustur(fatura: Fatura):
                     detail=f"Stok yetersiz! Mevcut stok: {urun.stok}"
                 )
     raise HTTPException(status_code=404, detail="Ürün bulunamadı.")
+
+# Satın Alma Endpointi
+@app.post("/satin-al")
+def satin_al(satin_alma: SatinAlma):
+    for urun in urun_listesi:
+        if urun.urun_kodu == satin_alma.urun_kodu:
+            if urun.stok >= satin_alma.miktar:
+                urun.stok -= satin_alma.miktar
+                satin_alma_listesi.append({
+                    "musteri": satin_alma.musteri_adi,
+                    "urun": urun.urun_adi,
+                    "miktar": satin_alma.miktar,
+                    "tarih": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                })
+                return {
+                    "mesaj": f"{urun.urun_adi} satın alındı. Yeni stok: {urun.stok}"
+                }
+            else:
+                raise HTTPException(
+                    status_code=400,
+                    detail=f"Stok yetersiz! Mevcut stok: {urun.stok}"
+                )
+    raise HTTPException(status_code=404, detail="Ürün bulunamadı.")
+
+# Satın Alma Geçmişi Listeleme
+@app.get("/satin-alar")
+def satin_alma_gecmisi():
+    return satin_alma_listesi
