@@ -4,10 +4,10 @@ ERP için fatura kesme
 
 ## Özellikler şunlar (Endpointler)
 
-- ✅ Ürün ekleme → `POST /urun/ekle`
-- ✅ Ürün listeleme → `GET /urunler`
-- ✅ Stok güncelleme → `PUT /urun/stok-guncelle/{urun_kodu}`
-- ✅ Fatura kesme → `POST /fatura/olustur` (stoktan otomatik düşer)
+-  Ürün ekleme → `POST /urun/ekle`
+-  Ürün listeleme → `GET /urunler`
+-  Stok güncelleme → `PUT /urun/stok-guncelle/{urun_kodu}`
+-  Fatura kesme → `POST /fatura/olustur` (stoktan otomatik düşer)
 
 ## Kullanılan Teknolojiler
 
