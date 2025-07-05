@@ -1,8 +1,8 @@
-# Mini ERP API (Python + FastAPI)
+# ERP API (Python + FastAPI)
 
-Bu proje, özgeçmişinizde veya GitHub profilinizde gösterebileceğiniz basit bir ERP API sistemidir. Python ile FastAPI kullanılarak yazılmıştır.
+ERP için fatura kesme 
 
-## Özellikler (Endpointler)
+## Özellikler şunlar (Endpointler)
 
 - ✅ Ürün ekleme → `POST /urun/ekle`
 - ✅ Ürün listeleme → `GET /urunler`
@@ -17,19 +17,19 @@ Bu proje, özgeçmişinizde veya GitHub profilinizde gösterebileceğiniz basit 
 
 ## Uygulama Nasıl Çalıştırılır?
 
-1. Gerekli paketleri yükleyin:
+1. Gerekli paketler:
    ```
    pip install -r requirements.txt
    ```
 
-2. Sunucuyu başlatın:
+2. Sunucuyu başlat:
    ```
    uvicorn main:app --reload
    ```
 
-3. API'yı test edin:
+3. API'yı test et:
    - `http://127.0.0.1:8000/docs` üzerinden Swagger arayüzünü kullanabilirsiniz.
 
 ## Not
 
-Veriler sadece geçici olarak bellekte (listede) tutulur. Gerçek bir veritabanı entegrasyonu yapılmamıştır.
+Veriler sadece geçici olarak bellekte (listede) tutulur. Gerçek bir veritabanı entegrasyonu yapmadım.
