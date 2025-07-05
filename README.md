@@ -1,6 +1,6 @@
 # ERP API (Python + FastAPI)
 
-ERP için fatura kesme 
+ERP için fatura kesme ve satın alma endpoint
 
 ## Özellikler şunlar (Endpointler)
 
