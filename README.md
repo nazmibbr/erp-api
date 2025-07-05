@@ -8,6 +8,7 @@ ERP için fatura kesme ve satın alma endpoint
 -  Ürün listeleme → `GET /urunler`
 -  Stok güncelleme → `PUT /urun/stok-guncelle/{urun_kodu}`
 -  Fatura kesme → `POST /fatura/olustur` (stoktan otomatik düşer)
+-  Satın alma → `POST /satin-al`
 
 ## Kullanılan Teknolojiler
 
