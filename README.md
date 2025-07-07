@@ -1,6 +1,6 @@
 # ERP API (Python + FastAPI)
 
-ERP için fatura kesme ve satın alma endpoint
+ERP için fatura kesme ve satın alma endpoint, 
 
 ## Özellikler şunlar (Endpointler)
 
@@ -33,4 +33,9 @@ ERP için fatura kesme ve satın alma endpoint
 
 ## Not
 
-Veriler sadece geçici olarak bellekte (listede) tutulur. Gerçek bir veritabanı entegrasyonu yapmadım.
+## Veritabanı Kullanımı
+
+Bu projede SQLite veritabanı (`erp_mock_database_extended.db`) kullandım. Veritabanı bağlantısı doğrudan `main.py` içerisinde kuruludur.
+
+Veri yapısı: 30 ürün ve 30 örnek fatura kaydı içerir.
+
